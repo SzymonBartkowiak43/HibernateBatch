@@ -43,3 +43,10 @@ tasks.test {
 kotlin {
   jvmToolchain(21)
 }
+
+tasks.register<JavaExec>("run") {
+  group = "application"
+  description = "Run the main class"
+  classpath = sourceSets["main"].runtimeClasspath
+  mainClass.set("org.example.Main")
+}
